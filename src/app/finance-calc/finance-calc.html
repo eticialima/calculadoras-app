@@ -1,0 +1,61 @@
+<section class="calculator-grid">
+  <mat-card class="calc-card">
+    <mat-card-header>
+      <mat-card-title>Finance calculator</mat-card-title>
+      <mat-card-subtitle>Simple simulation with compound interest and monthly contributions.</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="form-grid">
+        <mat-form-field appearance="outline">
+          <mat-label>Initial amount</mat-label>
+          <input matInput type="number" min="0" step="100" [(ngModel)]="initialAmount" />
+          <span matTextPrefix>R$&nbsp;</span>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Monthly contribution</mat-label>
+          <input matInput type="number" min="0" step="50" [(ngModel)]="monthlyContribution" />
+          <span matTextPrefix>R$&nbsp;</span>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Monthly interest rate</mat-label>
+          <input matInput type="number" min="0" step="0.1" [(ngModel)]="interestRate" />
+          <span matTextSuffix>%</span>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Period</mat-label>
+          <input matInput type="number" min="1" step="1" [(ngModel)]="months" />
+          <span matTextSuffix>months</span>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-stroked-button type="button" (click)="reset()">Reset</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="result-card">
+    <mat-card-content>
+      <p class="result-label">Final balance</p>
+      <h2>{{ finalAmount | currency: 'BRL':'symbol':'1.2-2' }}</h2>
+
+      <div class="metric-row">
+        <span>Total invested</span>
+        <strong>{{ totalInvested | currency: 'BRL':'symbol':'1.2-2' }}</strong>
+      </div>
+
+      <div class="metric-row">
+        <span>Total interest</span>
+        <strong>{{ interestEarned | currency: 'BRL':'symbol':'1.2-2' }}</strong>
+      </div>
+
+      <p class="result-copy">
+        Approximate simulation based on monthly compounding over the accumulated balance.
+      </p>
+    </mat-card-content>
+  </mat-card>
+</section>

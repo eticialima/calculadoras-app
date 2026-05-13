@@ -1,0 +1,27 @@
+<mat-toolbar class="app-toolbar">
+  <span>{{ title }}</span>
+</mat-toolbar>
+
+<main class="app-shell">
+  <section class="hero">
+    <p class="eyebrow">Angular + Material</p>
+    <h1>Simple project with BMI and finance calculators</h1>
+    <p class="subtitle">
+      A clean Angular starter with SCSS, Angular Material, and two ready-to-use calculator components.
+    </p>
+  </section>
+
+  <mat-tab-group class="calculator-tabs" dynamicHeight>
+    <mat-tab label="BMI">
+      <div class="tab-panel">
+        <app-imc-calc />
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Finance">
+      <div class="tab-panel">
+        <app-finance-calc />
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</main>

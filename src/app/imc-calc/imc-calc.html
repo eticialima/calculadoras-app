@@ -1,0 +1,43 @@
+<section class="calculator-grid">
+  <mat-card class="calc-card">
+    <mat-card-header>
+      <mat-card-title>BMI calculator</mat-card-title>
+      <mat-card-subtitle>Enter your weight and height to calculate body mass index.</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="form-grid">
+        <mat-form-field appearance="outline">
+          <mat-label>Weight</mat-label>
+          <input matInput type="number" min="1" step="0.1" [(ngModel)]="weight" />
+          <span matTextSuffix>kg</span>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Height</mat-label>
+          <input matInput type="number" min="0.5" step="0.01" [(ngModel)]="height" />
+          <span matTextSuffix>m</span>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-stroked-button type="button" (click)="reset()">Reset</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="result-card">
+    <mat-card-content>
+      <p class="result-label">Your BMI</p>
+      <h2>{{ bmi | number: '1.1-1' }}</h2>
+      <p class="result-copy">{{ classification }}</p>
+
+      <mat-list>
+        <mat-list-item>Below 18.5: underweight</mat-list-item>
+        <mat-list-item>18.5 to 24.9: normal weight</mat-list-item>
+        <mat-list-item>25 to 29.9: overweight</mat-list-item>
+        <mat-list-item>30 or more: obesity</mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</section>

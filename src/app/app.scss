@@ -1,0 +1,50 @@
+.app-toolbar {
+  border-bottom: 1px solid var(--mat-sys-outline-variant);
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 24px 16px 40px;
+}
+
+.hero {
+  max-width: 720px;
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--mat-sys-primary);
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3.6vw, 3.3rem);
+  line-height: 1.05;
+}
+
+.subtitle {
+  max-width: 600px;
+  margin: 16px auto 0;
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.calculator-tabs {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.tab-panel {
+  padding-top: 20px;
+}
+
+@media (max-width: 640px) {
+  .tab-panel {
+    padding-top: 16px;
+  }
+}
